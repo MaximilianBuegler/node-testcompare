@@ -7,24 +7,17 @@
  *
  *===========================================================================*/
 
-/**
- * Compares two numeric values for being equal with a given threshold.
- * 
- * Function from test setup in fft-js in https://github.com/vail-systems/node-fft
- * (c) Vail Systems. Joshua Jung and Ben Bryan. 2015
- *
- * @param {number} val1 first value
- * @param {number} val2 second value
- * @param {number} threshold maximum difference between val1 and val2
- *
- * @returns true if difference between val1 and val2 is less than threshold.
- **/
-function equalWithThreshold(val1, val2, threshold) {
-    return (val1 > val2 - threshold) &&
-           (val1 < val2 + threshold);
-}
 
 module.exports = {
+    /**
+     * Compares value result with desired allowing a deviation of threshold for any (contained) numerical values
+     *
+     * @param result first value for comparison
+     * @param desired second value for comparison
+     * @param {number} threshold maximum allowed deviation for any (contained) numerical values
+     *
+     * @returns true is both values match
+     **/
     compare: function (result, desired,threshold) {
         if (result===undefined){
             return desired===undefined;
@@ -96,3 +89,20 @@ module.exports = {
     }
 };
 
+
+/**
+ * Compares two numeric values for being equal with a given threshold.
+ * 
+ * Function from test setup in fft-js in https://github.com/vail-systems/node-fft
+ * (c) Vail Systems. Joshua Jung and Ben Bryan. 2015
+ *
+ * @param {number} val1 first value
+ * @param {number} val2 second value
+ * @param {number} threshold maximum difference between val1 and val2
+ *
+ * @returns true if difference between val1 and val2 is less than threshold.
+ **/
+function equalWithThreshold(val1, val2, threshold) {
+    return (val1 > val2 - threshold) &&
+           (val1 < val2 + threshold);
+}
