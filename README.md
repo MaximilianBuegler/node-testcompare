@@ -17,6 +17,26 @@ Helper function for comparisons in unit tests
     var value3={a:[1,2,3],b:[4,5,6],c:undefined,d:null,e:"abcd",f:true};
     console.log(compare(value1,value3,0.001)); //returns false
 
+# Example test
+
+    var compare = require('testcomparison'),
+        fs = require('fs');
+
+Preparation for test:
+    //Run some function
+    var res=someFunctionToBeTested();
+    
+    //Store output in JSON file
+    fs.writeFileSync('test/data/res.json',JSON.stringify(res),'utf8');
+    
+Actual test:
+
+    //Run some function
+    var res=someFunctionToBeTested();
+    
+    //Load JSON file and assert output of function to still match the earlier produced result
+    assert(compare(res,JSON.parse(fs.readFileSync('test/data/set1_res.json','utf8')),0.001));
+
 
 
 # Test
