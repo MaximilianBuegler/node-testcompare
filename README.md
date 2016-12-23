@@ -36,7 +36,7 @@ Actual test:
     var res=someFunctionToBeTested();
     
     //Load JSON file and assert output of function to still match the earlier produced result
-    assert(compare(res,JSON.parse(fs.readFileSync('test/data/set1_res.json','utf8')),0.001));
+    assert(compare(res,JSON.parse(fs.readFileSync('test/data/res.json','utf8')),0.001));
 
 
 
