@@ -1,14 +1,14 @@
-# node-testcomparison
+# node-testcompare
 Helper function for comparisons in unit tests
 
 # Notes
     Compares two variables for being identical, using a threshold for numerical comparisons.
     
 # Installation
-    npm install testcomparison --save
+    npm install testcompare --save
 
 # Usage
-    var compare = require('testcomparison');
+    var compare = require('testcompare');
     
     var value1={a:[1,2,3],b:[4,5,6],c:undefined,d:null,e:"abc",f:true};
     var value2={a:[1,2,3],b:[4,5,6],c:undefined,d:null,e:"abc",f:true};
@@ -19,7 +19,7 @@ Helper function for comparisons in unit tests
 
 # Example test
 
-    var compare = require('testcomparison'),
+    var compare = require('testcompare'),
         fs = require('fs');
 
 Preparation for test:
