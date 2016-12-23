@@ -23,6 +23,7 @@ Helper function for comparisons in unit tests
         fs = require('fs');
 
 Preparation for test:
+    
     //Run some function
     var res=someFunctionToBeTested();
     
