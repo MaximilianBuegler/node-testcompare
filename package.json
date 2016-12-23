@@ -1,0 +1,28 @@
+{
+  "name": "testcompare",
+  "version": "0.0.1",
+  "description": "Helper function for comparisons in unit tests",
+  "license": "MIT",
+  "homepage": "https://github.com/MaximilianBuegler/node-testcompare",
+  "repository": "MaximilianBuegler/node-testcompare",
+  "contributors": [
+    "Maximilian Buegler <max@maxbuegler.eu> (http://www.maxbuegler.eu/)"
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "src",
+    "test"
+  ],
+  "keywords": [
+    "comparison",
+    "tolerance",
+    "testing",
+    "unit tests"
+  ],
+  "dependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {}
+}
