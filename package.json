@@ -1,6 +1,6 @@
 {
   "name": "testcompare",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Helper function for comparisons in unit tests",
   "license": "MIT",
   "homepage": "https://github.com/MaximilianBuegler/node-testcompare",
