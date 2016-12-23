@@ -1,15 +1,9 @@
-
 /*===========================================================================*\
- * Pedometer algorithm for node.js
+ * Helper function for comparisons in unit tests
  *
- * Uses a windowed average peak counting algorithm to perform step detection.
+ * Compares two variables for being identical, using a threshold for numerical comparisons.
  *
  * (c) 2016 Maximilian Bügler
- *
- * Assumes all data to be 2D arrays
- *
- * [[x1, y1, z1],[x2, y2, z2],...]
- * [[pitch1, roll1, yaw1]. [pitch2, roll2, yaw2],... ] (in Radians)
  *
  *===========================================================================*/
 
