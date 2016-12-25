@@ -87,16 +87,18 @@ Returns:
       
         Compare numbers
           ✓ Test 1 - Both numbers equal - threshold 0
-          ✓ Test 2 - Both numbers within threshold - threshold 0.1
-          ✓ Test 3 - One number infinity - threshold 0.1
-      
+          ✓ Test 2 - Both numbers within threshold
+          ✓ Test 3 - Both numbers not within threshold
+          ✓ Test 4 - One number infinity
+          ✓ Test 5 - Both numbers infinity
+
         Comparing functions returns false to prevent false positives
           ✓ Test 1 - First variable is function
           ✓ Test 2 - Second variable is function
           ✓ Test 3 - Both variables are functions
       
                   
-        29 passing (12ms)
+        31 passing (12ms)
 
         
 

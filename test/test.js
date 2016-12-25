@@ -174,18 +174,30 @@ describe('Compare numbers', function () {
     it('Test 1 - Both numbers equal - threshold 0', function () {
         assert(compare(1,1,0));
     });
-    it('Test 2 - Both numbers within threshold - threshold 0.1', function () {
+    it('Test 2 - Both numbers within threshold', function () {
         assert(compare(1,0.9,0.1));
         assert(compare(1,1.1,0.1));
         assert(compare(0,0.1,0.1));
         assert(compare(0.1,0,0.1));
     });
-    it('Test 3 - One number infinity - threshold 0.1', function () {
+    it('Test 3 - Both numbers not within threshold', function () {
+        assert(!compare(1,0.8,0.1));
+        assert(!compare(1,2.1,0.1));
+        assert(!compare(0,0.2,0.1));
+        assert(!compare(0.2,0,0.1));
+    });    
+    it('Test 4 - One number infinity', function () {
         assert(!compare(Infinity,0,0.1));
         assert(!compare(0,Infinity,0.1));
         assert(!compare(-Infinity,0,0.1));
         assert(!compare(0,-Infinity,0.1));        
-    });    
+    });
+    it('Test 5 - Both numbers infinity', function () {
+        assert(compare(Infinity,Infinity,0.1));
+        assert(compare(-Infinity,-Infinity,0.1));
+        assert(!compare(Infinity,-Infinity,0.1));
+        assert(!compare(-Infinity,Infinity,0.1));
+    });        
 });
 
 describe('Comparing functions returns false to prevent false positives', function () {
