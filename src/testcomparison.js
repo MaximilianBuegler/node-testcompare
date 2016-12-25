@@ -31,7 +31,9 @@ module.exports = {
         else if (desired===null){
             return false;
         }
-        
+        if (typeof desired === 'function' || typeof result === 'function' ) { 
+            return false; //Lib cannot compare functions, hence we return false in order to not give false positive results.
+        }        
         if (Array.isArray(desired)){
             if (!Array.isArray(result)){
                 return false;
@@ -103,6 +105,6 @@ module.exports = {
  * @returns true if difference between val1 and val2 is less than threshold.
  **/
 function equalWithThreshold(val1, val2, threshold) {
-    return (val1 > val2 - threshold) &&
-           (val1 < val2 + threshold);
+    return (val1 >= val2 - threshold) &&
+           (val1 <= val2 + threshold);
 }

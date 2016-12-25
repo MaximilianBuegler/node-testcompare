@@ -85,8 +85,18 @@ Returns:
           ✓ Test 3 - Second array empty
           ✓ Test 4 - No array empty
       
+        Compare numbers
+          ✓ Test 1 - Both numbers equal - threshold 0
+          ✓ Test 2 - Both numbers within threshold - threshold 0.1
+          ✓ Test 3 - One number infinity - threshold 0.1
       
-        23 passing (12ms)
+        Comparing functions returns false to prevent false positives
+          ✓ Test 1 - First variable is function
+          ✓ Test 2 - Second variable is function
+          ✓ Test 3 - Both variables are functions
+      
+                  
+        29 passing (12ms)
 
         
 

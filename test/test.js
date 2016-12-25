@@ -169,3 +169,34 @@ describe('Compare object arrays', function () {
         assert(!compare({a:[1,2,3],b:[4,5,6],c:undefined,d:null,e:"abc",f:true},{a:[1,2,3],b:[4,5,6],c:false,d:null,e:"abc",f:true},0.001));
     });
 });
+
+describe('Compare numbers', function () {
+    it('Test 1 - Both numbers equal - threshold 0', function () {
+        assert(compare(1,1,0));
+    });
+    it('Test 2 - Both numbers within threshold - threshold 0.1', function () {
+        assert(compare(1,0.9,0.1));
+        assert(compare(1,1.1,0.1));
+        assert(compare(0,0.1,0.1));
+        assert(compare(0.1,0,0.1));
+    });
+    it('Test 3 - One number infinity - threshold 0.1', function () {
+        assert(!compare(Infinity,0,0.1));
+        assert(!compare(0,Infinity,0.1));
+        assert(!compare(-Infinity,0,0.1));
+        assert(!compare(0,-Infinity,0.1));        
+    });    
+});
+
+describe('Comparing functions returns false to prevent false positives', function () {
+    it('Test 1 - First variable is function', function () {
+        assert(!compare(function(){},0,0));
+    });
+    it('Test 2 - Second variable is function', function () {
+        assert(!compare(0,function(){},0));
+    });
+    it('Test 3 - Both variables are functions', function () {
+        assert(!compare(function(){},function(){},0));
+    });
+    
+});
