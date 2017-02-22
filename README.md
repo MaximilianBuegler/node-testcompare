@@ -2,6 +2,10 @@
 
 Helper function for comparisons in unit tests
 
+# Build status
+
+[![Build Status](https://travis-ci.org/MaximilianBuegler/node-testcompare.svg?branch=master)](https://travis-ci.org/MaximilianBuegler/node-testcompare)
+
 # Notes
 
 Compares two variables for being identical, using a threshold for numerical comparisons.
