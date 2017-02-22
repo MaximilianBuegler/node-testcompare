@@ -5,6 +5,7 @@ Helper function for comparisons in unit tests
 # Build status
 
 [![Build Status](https://travis-ci.org/MaximilianBuegler/node-testcompare.svg?branch=master)](https://travis-ci.org/MaximilianBuegler/node-testcompare)
+[![Coverage Status](https://coveralls.io/repos/github/MaximilianBuegler/node-testcompare/badge.svg?branch=master)](https://coveralls.io/github/MaximilianBuegler/node-testcompare?branch=master)
 
 # Notes
 
