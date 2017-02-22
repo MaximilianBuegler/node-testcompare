@@ -141,6 +141,12 @@ describe('Compare booleans', function () {
         assert(!compare(false,true,0.001));
         assert(compare(true,true,0.001));
     });
+    it('Test 2', function () {
+        assert(compare(false,0,0.001));
+        assert(!compare(0,false,0.001));
+        assert(!compare(1,true,0.001));
+        assert(compare(true,1,0.001));
+    });    
 });
 
 describe('Compare object arrays', function () {
@@ -168,6 +174,22 @@ describe('Compare object arrays', function () {
         assert(!compare({a:[1,2,3],b:[4,5,6],c:undefined,d:true,e:"abc",f:true},{a:[1,2,3],b:[4,5,6],c:undefined,d:null,e:"abc",f:true},0.001));
         assert(!compare({a:[1,2,3],b:[4,5,6],c:undefined,d:null,e:"abc",f:true},{a:[1,2,3],b:[4,5,6],c:false,d:null,e:"abc",f:true},0.001));
     });
+    it('Test 5 - First element not object', function () {
+        assert(!compare(1,{a:1},0.001));
+    });
+    it('Test 6 - Second element not object', function () {
+        assert(!compare({a:1},1,0.001));
+    });
+    it('Test 7 - Protoypes', function () {
+	var prototypeTest={}
+	Object.prototype.add = function (a,b) {this[a]=b;}
+	prototypeTest.add(1,1);
+        assert(!compare(prototypeTest,{},0.001));
+	assert(!compare({},prototypeTest,0.001));
+	assert(compare(prototypeTest,prototypeTest,0.001));
+    });
+
+
 });
 
 describe('Compare numbers', function () {
