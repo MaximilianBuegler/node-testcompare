@@ -100,8 +100,7 @@ Returns:
                   
         31 passing (12ms)
 
-        
-
+      
 # License
 
 MIT License
