@@ -19,6 +19,9 @@ module.exports = {
      * @returns true is both values match
      **/
     compare: function (result, desired,threshold) {
+        if (threshold===undefined){
+            threshold=0;
+        }
         if (result===undefined){
             return desired===undefined;
         }
